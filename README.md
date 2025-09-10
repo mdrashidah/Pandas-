@@ -3,20 +3,35 @@
 <img width="853" height="367" alt="image" src="https://github.com/user-attachments/assets/2f6c4b86-ea5b-44d5-874a-e935772e2ca7" />
 
 
-
-<img width="1049" height="336" alt="image" src="https://github.com/user-attachments/assets/b6e7d04a-4e1f-456a-800d-ca1aeb6c820d" />
-
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Pandas is a core library for data science and data analysis in Python, providing intuitive and flexible data structures, such as the DataFrame. It simplifies the process of data cleaning, manipulation, and analysis, making it an essential tool for anyone working with data.
+
+History
+Developer Wes McKinney began working on Pandas in 2008 while at AQR Capital Management, driven by the need for a high-performance, flexible tool to perform quantitative analysis on financial data. Before leaving AQR, he was able to convince management to allow him to open-source the library.
+
+Another AQR employee, Chang She, joined the effort in 2012 as the second major contributor to the library.
+
+In 2015, Pandas signed on as a fiscally sponsored project of NumFOCUS, a 501(c)(3) nonprofit charity in the United States.
+
+Data model
+Pandas is built around data structures called Series and DataFrames. Data for these collections can be imported from various file formats such as comma-separated values, JSON, Parquet, SQL database tables or queries, and Microsoft Excel.[8]
+
+A Series is a 1-dimensional data structure built on top of NumPy's array.[9]: 97  Unlike in NumPy, each data point has an associated label. The collection of these labels is called an index.[4]: 112  Series can be used arithmetically, as in the statement series_3 = series_1 + series_2: this will align data points with corresponding index values in series_1 and series_2, then add them together to produce new values in series_3.[4]: 114  A DataFrame is a 2-dimensional data structure of rows and columns, similar to a spreadsheet, and analogous to a Python dictionary mapping column names (keys) to Series (values), with each Series sharing an index.[4]: 115  DataFrames can be concatenated together or "merged" on columns or indices in a manner similar to joins in SQL.[4]: 177–182  Pandas implements a subset of relational algebra, and supports one-to-one, many-to-one, and many-to-many joins.[9]: 147–148 
+
+Users can transform or summarize data by applying arbitrary functions.[4]: 132  Since Pandas is built on top of NumPy, all NumPy functions work on Series and DataFrames as well.[9]: 115  Pandas also includes built-in operations for arithmetic, string manipulation, and summary statistics such as mean, median, and standard deviation.[4]: 139, 211  These built-in functions are designed to handle missing data, usually represented by the floating-point value NaN.[4]: 142–143 
+
+Subsets of data can be selected by column name, index, or Boolean expressions. For example, df[df['col1'] > 5] will return all rows in the DataFrame df for which the value of the column col1 exceeds 5.[4]: 126–128  Data can be grouped together by a column value, as in df['col1'].groupby(df['col2']), or by a function which is applied to the index. For example, df.groupby(lambda i: i % 2) groups data by whether the index is even.[4]: 253–259 
+
+Pandas includes support for time series, such as the ability to interpolate values [4]: 316–317  and filter using a range of timestamps (e.g. data['1/1/2023':'2/2/2023'] will return all dates between January 1st and February 2nd).[4]: 295  Pandas represents missing time series data using a special NaT (Not a Timestamp) object, instead of the NaN value it uses elsewhere.
 
 Main Features
 Here are just a few of the things that pandas does well:
 
-Easy handling of missing data (represented as NaN, NA, or NaT) in floating point as well as non-floating point data
-Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
+Easy handling of missing data (represented as NaN, NA, or NaT) in floating-point as well as non-floating-point data
+Size mutability: columns can be inserted and deleted from the DataFrame and higher-dimensional objects
 Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
-Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
+Powerful, flexible group-by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
 Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
 Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
 Intuitive merging and joining data sets
